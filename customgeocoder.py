@@ -15,11 +15,7 @@ for i in range(1, number of rows in wb):
 	time.sleep(1)
 	string = browser.current_url
 	string = re.sub('.*@','',string)
-	string = string.split(",17z")
-	try:
-		string = string.split(",14z")
-	except:
-		pass
-	newFile.write(string[0])
+	string = string.split(",")
+	newFile.write(string[0],string[1])
 	newFile.write("\n")
-	print(str(i+1)+".", string[0])
+	print(str(i+1)+".", string[0]+","+string[1])
